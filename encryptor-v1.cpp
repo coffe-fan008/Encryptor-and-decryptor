@@ -42,31 +42,23 @@ void cifrarArchivo( const string& archivoEntrada, const string& archivoSalida, c
     );
 }
 int main(int argc, char* argv[]) {
-  cout<<R"(MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMNxc,',cxXMMMMMMMMMMMMM
-MMMMMMMMMMM0'         'OMMMMMMMMMMM
-MMMMMMMMMW:   cOXNXOc.  ;WMMMMMMMMM
-MMMMMMMMM,  cWMMMMMMMWc  ,MMMMMMMMM
-MMMMMMMMd  lMMMMMMMMMMMo  dMMMMMMMM
-MMMMMMMM. .MMMMMMMMMMMMM. .MMMMMMMM
-MMMMMMMM  ;MMMMMMMMMMMMM;  WMMMMMMM
-MMMMMMMM  ;MMMMMMMMMMMMM:  NMMMMMMM
-MMMMMMMM  ;MMMMMMMMMMMMM:  NMMMMMMM
-MMMMMX:;  .;;;;;;;;;;;;;.  ,:XMMMMM
-MMMMK                         KMMMM
-MMMMk                         kMMMM
-MMMMk           .:'           kMMMM
-MMMMk          cMMMo          kMMMM
-MMMMk          dMMMx          kMMMM
-MMMMk           kMO           kMMMM
-MMMMk           OM0           kMMMM
-MMMMk           WMM           kMMMM
-MMMMk          ;MMM:          kMMMM
-MMMMk           ...           kMMMM
-MMMMk                         kMMMM
-MMMM0                         KMMMM
-MMMMMK;,,,,,,,,,,,,,,,,,,,,,;KMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM)"<<endl;
+  cout<<R"(                    ███████████            
+                  ████       ████          
+                 ███          ░███         
+                ███             ███        
+                ███             ███        
+                ███             ███        
+                ███             ███        
+             █████████████████████████     
+             █████████████████████████     
+             ███████████▒░░███████████     
+             ██████████░    ██████████     
+             ███████████   ███████████     
+             ███████████   ███████████     
+             ███████████   ███████████     
+             ██████████░░░░░██████████     
+             █████████████████████████     
+             █████████████████████████     )"<<endl;
   cout << " _____ _   _  ____ ______   ______ _____ ___  ____  \n"
           "| ____| \\ | |/ ___|  _ \\ \\ / /  _ \\_   _/ _ \\|  _ \\ \n"
           "|  _| |  \\| | |   | |_) \\ V /| |_) || || | | | |_) |\n"
