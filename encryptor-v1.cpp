@@ -42,34 +42,68 @@ void cifrarArchivo( const string& archivoEntrada, const string& archivoSalida, c
     );
 }
 int main(int argc, char* argv[]) {
+  cout<<R"(MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMNxc,',cxXMMMMMMMMMMMMM
+MMMMMMMMMMM0'         'OMMMMMMMMMMM
+MMMMMMMMMW:   cOXNXOc.  ;WMMMMMMMMM
+MMMMMMMMM,  cWMMMMMMMWc  ,MMMMMMMMM
+MMMMMMMMd  lMMMMMMMMMMMo  dMMMMMMMM
+MMMMMMMM. .MMMMMMMMMMMMM. .MMMMMMMM
+MMMMMMMM  ;MMMMMMMMMMMMM;  WMMMMMMM
+MMMMMMMM  ;MMMMMMMMMMMMM:  NMMMMMMM
+MMMMMMMM  ;MMMMMMMMMMMMM:  NMMMMMMM
+MMMMMX:;  .;;;;;;;;;;;;;.  ,:XMMMMM
+MMMMK                         KMMMM
+MMMMk                         kMMMM
+MMMMk           .:'           kMMMM
+MMMMk          cMMMo          kMMMM
+MMMMk          dMMMx          kMMMM
+MMMMk           kMO           kMMMM
+MMMMk           OM0           kMMMM
+MMMMk           WMM           kMMMM
+MMMMk          ;MMM:          kMMMM
+MMMMk           ...           kMMMM
+MMMMk                         kMMMM
+MMMM0                         KMMMM
+MMMMMK;,,,,,,,,,,,,,,,,,,,,,;KMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM)"<<endl;
+  cout << " _____ _   _  ____ ______   ______ _____ ___  ____  \n"
+          "| ____| \\ | |/ ___|  _ \\ \\ / /  _ \\_   _/ _ \\|  _ \\ \n"
+          "|  _| |  \\| | |   | |_) \\ V /| |_) || || | | | |_) |\n"
+          "| |___| |\\  | |___|  _ < | | |  __/ | || |_| |  _ < \n"
+          "|_____|_| \\_|\\____|_| \\_\\|_| |_|    |_| \\___/|_| \\_\\\n" << endl;
   int opcion;
   cout << "Choose an option [1]Encrypt or [2]Decrypt: ";
   cin >> opcion;
-    if (argc != 4) {
-        cerr << "Use: " << argv[0] << " <File_Input> <File_output> <key>" << endl;
-        return 1;
-    }
-    string archivoEntrada = argv[1];
-    string archivoSalida = argv[2];
-    string claveTexto = argv[3];
+  cin.ignore();
+    string inputFile;
+    string outputFile;
+    string passwd;
 
-    if (claveTexto.size() != 16) {
-        cerr << "Error: The key must be exactly 16 characters long." << endl;
+    cout<<"Enter the input file: ";
+    getline(cin, inputFile);
+    cout<<"Enter the output file: ";
+    getline(cin, outputFile);
+    cout<<"Enter 16 characters password: ";
+    getline(cin, passwd);
+
+    if (passwd.size() != 16) {
+        cerr << "Error: The key must be exactly 16 characters long!" << endl;
         return 1;
     }
 
     if ( opcion == 2 ) {
-      descifrarArchivo(archivoEntrada, archivoSalida,
-          reinterpret_cast<const CryptoPP::byte*>(claveTexto.data()),
-          claveTexto.size());
-    cout << "File Decrypted Successfully " << endl;
+      descifrarArchivo(inputFile, outputFile,
+          reinterpret_cast<const CryptoPP::byte*>(passwd.data()),
+          passwd.size());
+    cout << "File Decrypted Successfully :) " << endl;
     return 0;
     }
     if ( opcion == 1 ) {
-      cifrarArchivo(archivoEntrada, archivoSalida,
-          reinterpret_cast<const CryptoPP::byte*>(claveTexto.data()),
-          claveTexto.size());
-    cout << "file successfully encrypted " << endl;
+      cifrarArchivo(inputFile, outputFile,
+          reinterpret_cast<const CryptoPP::byte*>(passwd.data()),
+          passwd.size());
+    cout << "file successfully encrypted :) " << endl;
     return 0;
     }
     else {
